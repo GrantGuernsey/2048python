@@ -46,3 +46,56 @@ Use the visualize_game() function to display the game window and play interactiv
 The game ends when there are no more valid moves, and the total score is printed in the terminal.
 
 Feel free to explore and modify the code to suit your preferences. Enjoy playing the 2048 game!
+
+
+# Unit Testing
+
+Unit Testing for Slide and Merge Functions
+This documentation provides information on the unit tests for the slide and merge functions in the twentyFourtyEight module. The tests are designed to ensure that these functions correctly handle movements in the 2048 game grid.
+
+How to Run Tests
+Prerequisites:
+Ensure that you have Python installed on your system.
+
+Run the Tests:
+Open a terminal or command prompt and navigate to the directory containing the test file (test_twentyFourtyEight.py). Run the following command:
+
+```
+python UnitTest2048.py
+```
+## Review Results:
+The tests will be executed, and the results will be displayed in the terminal. If all tests pass, you should see an output indicating success. Any failures will be reported with details on the specific test case that failed.
+
+## Test Cases
+1. test_move_up
+Tests the functionality of moving tiles upward in the game grid.
+
+```
+arr = np.array([[0, 2, 2, 0], [0, 4, 0, 4], [2, 0, 4, 2], [0, 0, 2, 0]])
+expected_result = np.array([[2, 2, 2, 4], [0, 4, 4, 2], [0, 0, 2, 0], [0, 0, 0, 0]])
+```
+2. test_move_down
+Tests the functionality of moving tiles downward in the game grid.
+
+```
+arr = np.array([[0, 2, 2, 0], [0, 4, 0, 4], [2, 0, 4, 2], [0, 0, 2, 0]])
+expected_result = np.array([[0, 0, 0, 0], [0, 0, 2, 0], [0, 2, 4, 4], [2, 4, 2, 2]])
+```
+3. test_move_right
+Tests the functionality of moving tiles to the right in the game grid.
+
+```
+arr = np.array([[0, 2, 2, 0], [0, 4, 0, 4], [2, 0, 4, 2], [0, 0, 2, 0]])
+expected_result = np.array([[0, 0, 0, 4], [0, 0, 0, 8], [0, 2, 4, 2], [0, 0, 0, 2]])
+```
+4. test_move_left
+Tests the functionality of moving tiles to the left in the game grid.
+
+```
+arr = np.array([[0, 2, 2, 0], [0, 4, 0, 4], [2, 0, 4, 2], [0, 0, 2, 0]])
+expected_result = np.array([[4, 0, 0, 0], [8, 0, 0, 0], [2, 4, 2, 0], [2, 0, 0, 0]])
+```
+## Notes
+The slide and merge functions are integral to the movement and merging of tiles in the 2048 game grid.
+Each test case asserts that the result of applying the specified movements matches the expected outcome.
+If any test fails, review the error message to identify the issue in the code.
